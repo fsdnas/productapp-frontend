@@ -1,0 +1,100 @@
+<h1 [ngStyle]="{ 'text-align': 'center' }">Add Product</h1>
+<form #addFrom="ngForm" (ngSubmit)="onAdding(addFrom)">
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Product Name"
+      name="name"
+      ngModel
+      #name="ngModel"
+      required
+    /> </mat-form-field
+  ><br />
+
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Enter Price"
+      name="price"
+      ngModel
+      #price="ngModel"
+      required
+    /> </mat-form-field
+  ><br />
+
+  <mat-form-field>
+    <mat-label>Select Category</mat-label>
+    <mat-select required ngModel name="category">
+      <mat-option
+        *ngFor="let category of categories"
+        value={{category}}
+      >
+        {{ category }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br />
+
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Enter Brand"
+      name="brand"
+      ngModel
+      #brand="ngModel"
+      required
+    /> </mat-form-field
+  ><br />
+
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Rating"
+      name="rating"
+      ngModel
+      #rating="ngModel"
+      required
+    /> </mat-form-field
+  ><br />
+
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Type "
+      name="type"
+      ngModel
+      #type="ngModel"
+      required
+    /> </mat-form-field
+  ><br />
+
+  <mat-form-field>
+    <textarea
+      matInput
+      placeholder="Enter Description"
+      name="description"
+      ngModel
+      #description="ngModel"
+      required
+    ></textarea></mat-form-field
+  ><br />
+
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Add Image"
+      name="productImg"
+      ngModel
+      #productImg="ngModel"
+      required
+    /> </mat-form-field
+  ><br />
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="!addFrom.valid"
+  >
+    Add
+  </button>
+</form>

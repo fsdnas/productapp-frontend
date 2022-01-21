@@ -1,0 +1,28 @@
+<div
+  *ngIf="products"
+  [ngClass]="'card'"
+  [ngStyle]="{
+    display: 'flex',
+    'flex-direction': 'column',
+    'justify-content': 'space-between',
+    'align-content': 'stretch'
+  }"
+>
+  <mat-card *ngFor="let product of products">
+    <mat-card-header>
+      <img
+        mat-card-md-image
+        src="{{ product.productImg }}"
+        alt="{{ product.name }}"
+      />
+      <mat-card-title>{{ product.name }}</mat-card-title>
+      <mat-card-title>Rs.{{ product.price }}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="onSubmit(product)">
+        View More
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

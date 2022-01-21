@@ -1,0 +1,12 @@
+<mat-toolbar class="mat-elevation-z6">
+  <div *ngFor="let t of types">
+    <button
+      mat-raised-button
+      [routerLink]="t.type.toLocaleLowerCase()"
+      [queryParams]="{ type: t.type }"
+    >
+      {{ t.type }}
+    </button>
+  </div>
+</mat-toolbar>
+<router-outlet></router-outlet>

@@ -1,0 +1,60 @@
+<mat-toolbar color="secondary">
+    <span>Angadi</span>
+    <span [ngClass]="'spacer'">
+    </span>
+    <mat-form-field>
+        <input matInput name="search" [(ngModel)]="search" placeholder="search">
+        <button mat-icon-button>
+            <mat-icon aria-label="label">search</mat-icon>
+        </button>
+    </mat-form-field>
+    <span [ngClass]="'spacer'">
+        </span>
+
+        <button mat-icon-button>
+            <mat-icon aria-label="label"></mat-icon>
+        </button>
+        <button mat-button routerLink="/login">Login</button>
+
+        <button mat-icon-button>
+            <mat-icon aria-label="label">shopping_cart</mat-icon>
+        </button>
+</mat-toolbar>
+
+<mat-toolbar class="mat-elevation-z6">
+    <button mat-icon-button>
+        <mat-icon aria-label="label">menu</mat-icon>
+    </button>
+
+    <button mat-button routerLink="/home" routerLinkActive="true">
+        Home
+    </button>
+
+    <div *ngFor="let category of categories">
+        <button mat-button [routerLink]="['/product',category.toLowerCase()]">
+           {{category}}
+        </button>
+    </div>
+
+    <!-- <button mat-button [routerLink]="['/product','electronics']" routerLinkActive="true">
+        electronics
+    </button>
+    <button mat-button [routerLink]="['/product','appliances']" routerLinkActive="true">
+        appliances
+    </button>
+    <button mat-button [routerLink]="['/product','furniture']" routerLinkActive="true">
+        furniture
+    </button>
+    <button mat-button [routerLink]="['/product','storage']" routerLinkActive="true">
+        storage
+    </button>
+    
+    <button mat-button [routerLink]="['/product','sports']" routerLinkActive="true">
+        sports
+    </button>
+
+    <button mat-button routerLink="products">
+        products
+    </button> -->
+    
+</mat-toolbar>
